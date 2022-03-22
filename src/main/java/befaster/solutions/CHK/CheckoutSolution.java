@@ -35,7 +35,7 @@ public class CheckoutSolution {
             }
             priceOfA = priceOfA + calculatePriceAUnderFiveProducts(noOfA);
 
-            if(noOfB > noOfE / 2)
+            if(noOfB >= noOfE / 2)
                 noOfB = noOfB - noOfE / 2;
 
 
@@ -55,6 +55,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
