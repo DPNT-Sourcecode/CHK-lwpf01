@@ -14,6 +14,9 @@ public class CheckoutSolution {
             int noOfF = 0;
             int noOfH = 0;
             int noOfK = 0;
+            int noOfP = 0;
+            int noOfQ = 0;
+            int noOfV = 0;
 
 
             for (int i = 0; i < skus.length(); i++) {
@@ -34,17 +37,19 @@ public class CheckoutSolution {
                     noOfH++;
                 else if (skus.charAt(i) == 'K')
                     noOfK++;
+                else if (skus.charAt(i) == 'P')
+                    noOfP++;
+                else if (skus.charAt(i) == 'Q')
+                    noOfQ++;
+                else if (skus.charAt(i) == 'V')
+                    noOfV++;
             }
             // TO BE COMPLETED !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             if(noOfA + noOfB + noOfC + noOfD + noOfE + noOfF != skus.length())
                 return -1;
 
             // Calculate price of A
-            int priceOfA = 0;
-            while(noOfA >= 5){
-                priceOfA = priceOfA + 200;
-                noOfA = noOfA - 5;
-            }
+            int priceOfA = getPriceOfPromotionalProduct(noOfA, 5, 200);
             priceOfA = priceOfA + calculatePriceAUnderFiveProducts(noOfA);
 
             // Calculate number of B
@@ -52,14 +57,13 @@ public class CheckoutSolution {
                 noOfB = noOfB - noOfE / 2;
 
             // Calculate price of H
-            int priceOfH = 0;
-            while(noOfH >= 10){
-                priceOfH = priceOfH + 80;
-                noOfH = noOfH - 10;
-            }
+            int priceOfH = getPriceOfPromotionalProduct(noOfH, 10, 80);
             priceOfH = priceOfH + calculatePriceHUnderTenProducts(noOfH);
 
-            // Calculate number of K
+            // Calculate price of V
+            int priceOfV = getPriceOfPromotionalProduct(noOfV, 3, 130);
+            priceOfV = priceOfV + calculatePriceHUnderThreeProducts(noOfV);
+
 
 
 
@@ -70,9 +74,24 @@ public class CheckoutSolution {
                 + 40 * noOfE
                 + calculatePriceF(noOfF)
                 + calculatePricePromotionMultipleProduct(noOfK, 80, 150, 2)
-                +
+                + calculatePricePromotionMultipleProduct(noOfP, 50, 200, 5)
+                + calculatePricePromotionMultipleProduct(noOfQ, 30, 80, 3);
+
         }
     return -1;
+    }
+
+    private int calculatePriceHUnderThreeProducts(int remainingNoOfV) {
+        return 90 * (remainingNoOfV / 2) + 50 * (remainingNoOfV % 2);
+    }
+
+    private int getPriceOfPromotionalProduct(int noOfProduct, int bestMultipleNumber, int bestPromoPrice) {
+        int priceOfProduct = 0;
+        while (noOfProduct >= bestMultipleNumber) {
+            priceOfProduct = priceOfProduct + bestPromoPrice;
+            noOfProduct = noOfProduct - bestMultipleNumber;
+        }
+        return priceOfProduct;
     }
 
     private int calculatePriceAUnderFiveProducts(int remainingNoOfA){
@@ -101,3 +120,4 @@ public class CheckoutSolution {
 
 
 }
+
