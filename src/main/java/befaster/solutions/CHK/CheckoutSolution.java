@@ -25,7 +25,7 @@ public class CheckoutSolution {
                 else if (skus.charAt(i) == 'E')
                     noOfE++;
             }
-            if(noOfA + noOfB + noOfC + noOfD != skus.length())
+            if(noOfA + noOfB + noOfC + noOfD + noOfE != skus.length())
                 return -1;
 
             int priceOfA = 0;
@@ -55,6 +55,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
