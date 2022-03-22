@@ -4,7 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        if(skus != null) {
+        if(skus != null && skus.) {
 
             int noOfA = 0;
             int noOfB = 0;
@@ -37,3 +37,4 @@ public class CheckoutSolution {
 
 
 }
+
