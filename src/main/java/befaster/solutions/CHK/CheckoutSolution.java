@@ -4,7 +4,7 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        if(skus != null && skus.) {
+        if(skus != null) {
 
             int noOfA = 0;
             int noOfB = 0;
@@ -35,6 +35,11 @@ public class CheckoutSolution {
         return 45 * (noOfB / 2) + 30 * (noOfB % 2);
     }
 
+    private boolean illegalCondition(String skus){
+        return skus.contains('A') && skus.contains('B') && skus.contains('C') && skus.contains('D')
+    }
+
 
 }
+
 
