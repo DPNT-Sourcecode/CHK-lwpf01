@@ -99,7 +99,7 @@ public class CheckoutSolution {
             noOfB = oneFree(noOfE, 2, noOfB);
 
             // Calculate number of F
-            noOfF = oneFree(noOfF, 2, noOfF);
+            noOfF = oneFree(noOfF, 3, noOfF);
 
             // Calculate number of M
             noOfM = oneFree(noOfN, 3, noOfM);
@@ -108,7 +108,7 @@ public class CheckoutSolution {
             noOfQ = oneFree(noOfR, 3, noOfQ);
 
             // Calculate number of U
-            noOfU = oneFree(noOfU, 3, noOfU);
+            noOfU = oneFree(noOfU, 4, noOfU);
 
             // Calculate price of A
             int priceOfA = getPriceOfPromotionalProduct(noOfA, 5, 200);
@@ -178,12 +178,6 @@ public class CheckoutSolution {
         return numberOfFreeDifferentProducts;
 
     }
-
-    private int sameProductOneFree(int noOfPromoProducts, int minimumNumberOfPromoProducts){
-        if(noOfPromoProducts > minimumNumberOfPromoProducts)
-            noOfPromoProducts = noOfPromoProducts - noOfPromoProducts / minimumNumberOfPromoProducts;
-        return numberOfFreeDifferentProducts;
-
-    }
 }
+
 
