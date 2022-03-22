@@ -112,6 +112,7 @@ public class CheckoutSolution {
 
             // Calculate price of A
             int priceOfA = getPriceOfPromotionalProduct(noOfA, 5, 200);
+            noOfA = noOfA - priceOfA /
             priceOfA = priceOfA + calculatePriceAUnderFiveProducts(noOfA);
 
             // Calculate price of H
@@ -177,4 +178,5 @@ public class CheckoutSolution {
     }
 
 }
+
 
