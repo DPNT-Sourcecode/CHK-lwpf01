@@ -179,4 +179,11 @@ public class CheckoutSolution {
 
     }
 
+    private int sameProductOneFree(int noOfPromoProducts, int minimumNumberOfPromoProducts){
+        if(noOfPromoProducts > minimumNumberOfPromoProducts)
+            noOfPromoProducts = noOfPromoProducts - noOfPromoProducts / minimumNumberOfPromoProducts;
+        return numberOfFreeDifferentProducts;
+
+    }
 }
+
