@@ -11,6 +11,7 @@ public class CheckoutSolution {
             int noOfC = 0;
             int noOfD = 0;
             int noOfE = 0;
+            int noOfF = 0;
 
             for (int i = 0; i < skus.length(); i++) {
 
@@ -24,8 +25,10 @@ public class CheckoutSolution {
                     noOfD++;
                 else if (skus.charAt(i) == 'E')
                     noOfE++;
+                else if (skus.charAt(i) == 'F')
+                    noOfF++;
             }
-            if(noOfA + noOfB + noOfC + noOfD + noOfE != skus.length())
+            if(noOfA + noOfB + noOfC + noOfD + noOfE + noOfF != skus.length())
                 return -1;
 
             int priceOfA = 0;
@@ -39,7 +42,7 @@ public class CheckoutSolution {
                 noOfB = noOfB - noOfE / 2;
 
 
-        return priceOfA + calculatePriceB(noOfB) + 20 * noOfC + 15 * noOfD + 40 * noOfE;
+        return priceOfA + calculatePriceB(noOfB) + 20 * noOfC + 15 * noOfD + 40 * noOfE + calculatePriceF(noOfF);
         }
     return -1;
     }
@@ -53,5 +56,13 @@ public class CheckoutSolution {
         return 45 * (noOfB / 2) + 30 * (noOfB % 2);
     }
 
+    private int calculatePriceF(int noOfF){
+        if(noOfF >= 3){
+            noOfF = noOfF - noOfF / 3;
+        }
+        return 10 * noOfF;
+    }
+
 
 }
+
