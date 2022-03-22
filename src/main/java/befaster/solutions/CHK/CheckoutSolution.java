@@ -22,6 +22,14 @@ public class CheckoutSolution {
 
 
     }
+
+    private int calculatePriceA(int noOfA){
+        int priceOfA = 0;
+
+            priceOfA = 130 * (noOfA / 3) + 50 * (noOfA % 3);
+        
+    }
 }
+
 
 
