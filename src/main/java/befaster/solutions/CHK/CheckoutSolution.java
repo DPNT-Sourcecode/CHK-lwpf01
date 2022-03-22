@@ -36,10 +36,11 @@ public class CheckoutSolution {
     }
 
     private boolean illegalCondition(String skus){
-        return skus.contains('A') && skus.contains('B') && skus.contains('C') && skus.contains('D')
+        return skus.contains("A") && skus.contains("B") && skus.contains("C") && skus.contains("D") ;
     }
 
 
 }
+
 
 
