@@ -10,8 +10,10 @@ public class CheckoutSolution {
             int noOfB = 0;
             int noOfC = 0;
             int noOfD = 0;
+            int noOfE = 0;
 
             for (int i = 0; i < skus.length(); i++) {
+
                 if (skus.charAt(i) == 'A')
                     noOfA++;
                 else if (skus.charAt(i) == 'B')
@@ -20,7 +22,21 @@ public class CheckoutSolution {
                     noOfC++;
                 else if (skus.charAt(i) == 'D')
                     noOfD++;
+                else if (skus.charAt(i) == 'E')
+                    noOfE++;
             }
+
+            int priceOfA = 0;
+            while(noOfA >= 5){
+                priceOfA = priceOfA + 200;
+                noOfA = noOfA - 5;
+            }
+            priceOfA = priceOfA + calculatePriceAUnderFiveProducts(noOfA);
+
+            noOfB = noOfB + noOfE / 2;
+            if(noOfE / 2 ==)
+
+
             if(noOfA + noOfB + noOfC + noOfD != skus.length())
                 return -1;
         return calculatePriceA(noOfA) + calculatePriceB(noOfB) + 20 * noOfC + 15 * noOfD;
@@ -28,11 +44,10 @@ public class CheckoutSolution {
     return -1;
     }
 
-    private int calculatePriceA(int noOfA){
-        int firstPrice =  130 * (noOfA / 3) + 50 * (noOfA % 3);
-        int secondPrice = 200 * (noOfA / 5) + 50 * (noOfA % 5);
-        return Math.max(firstPrice, secondPrice);
+    private int calculatePriceAUnderFiveProducts(int remainingNoOfA){
+        return 130 * (remainingNoOfA / 3) + 50 * (remainingNoOfA % 3);
     }
+
 
     private int calculatePriceB(int noOfB) {
         return 45 * (noOfB / 2) + 30 * (noOfB % 2);
@@ -40,3 +55,4 @@ public class CheckoutSolution {
 
 
 }
+
