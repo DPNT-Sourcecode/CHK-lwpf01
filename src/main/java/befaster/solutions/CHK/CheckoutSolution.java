@@ -4,13 +4,14 @@ import befaster.runner.SolutionNotImplementedException;
 
 public class CheckoutSolution {
     public Integer checkout(String skus) {
-        if(skus != null) {
+        int noOfA = 0;
+        int noOfB = 0;
+        int noOfC = 0;
+        int noOfD = 0;
+        int noOfE = 0;
+        if(skus != null && noOfA + noOfB + noOfC + noOfD + noOfE != skus.length()) {
 
-            int noOfA = 0;
-            int noOfB = 0;
-            int noOfC = 0;
-            int noOfD = 0;
-            int noOfE = 0;
+
 
             for (int i = 0; i < skus.length(); i++) {
 
@@ -33,11 +34,10 @@ public class CheckoutSolution {
             }
             priceOfA = priceOfA + calculatePriceAUnderFiveProducts(noOfA);
 
-            noOfB = noOfB + noOfE / 2;
-            if(noOfE / 2 ==)
+            if(noOfB > noOfE / 2)
+                noOfB = noOfB - noOfE / 2;
 
-
-            if(noOfA + noOfB + noOfC + noOfD != skus.length())
+            if()
                 return -1;
         return calculatePriceA(noOfA) + calculatePriceB(noOfB) + 20 * noOfC + 15 * noOfD;
         }
@@ -55,4 +55,5 @@ public class CheckoutSolution {
 
 
 }
+
 
