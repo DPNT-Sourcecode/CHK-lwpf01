@@ -161,19 +161,8 @@ public class CheckoutSolution {
         return 130 * (remainingNoOfA / 3) + 50 * (remainingNoOfA % 3);
     }
 
-    private int calculatePriceB(int noOfB) {
-        return 45 * (noOfB / 2) + 30 * (noOfB % 2);
-    }
-
     private int calculatePricePromotionMultipleProduct(int noOfProduct, int productPrice, int multiplePromoProductPrice, int multipleNumber) {
         return multiplePromoProductPrice * (noOfProduct / multipleNumber) + productPrice * (noOfProduct % multipleNumber);
-    }
-
-    private int calculatePriceF(int noOfF){
-        if(noOfF >= 3){
-            noOfF = noOfF - noOfF / 3;
-        }
-        return 10 * noOfF;
     }
 
     private int calculatePriceHUnderTenProducts(int remainingNoOfH){
@@ -188,3 +177,4 @@ public class CheckoutSolution {
     }
 
 }
+
