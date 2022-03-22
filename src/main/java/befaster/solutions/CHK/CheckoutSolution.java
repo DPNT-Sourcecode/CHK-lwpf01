@@ -11,7 +11,6 @@ public class CheckoutSolution {
             int noOfC = 0;
             int noOfD = 0;
 
-
             for (int i = 0; i < skus.length(); i++) {
                 if (skus.charAt(i) == 'A')
                     noOfA++;
@@ -22,6 +21,8 @@ public class CheckoutSolution {
                 else if (skus.charAt(i) == 'D')
                     noOfD++;
             }
+            if(noOfA + noOfB + noOfC + noOfD != skus.length())
+                return -1;
         return calculatePriceA(noOfA) + calculatePriceB(noOfB) + 20 * noOfC + 15 * noOfD;
         }
     return -1;
@@ -31,16 +32,13 @@ public class CheckoutSolution {
         return 130 * (noOfA / 3) + 50 * (noOfA % 3);
     }
 
-    private int calculatePriceB(int noOfB){
+    private int calculatePriceB(int noOfB) {
         return 45 * (noOfB / 2) + 30 * (noOfB % 2);
-    }
-
-    private boolean illegalCondition(String skus){
-        return skus.contains("A") && skus.contains("B") && skus.contains("C") && skus.contains("D") ;
     }
 
 
 }
+
 
 
 
