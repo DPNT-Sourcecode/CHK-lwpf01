@@ -29,7 +29,9 @@ public class CheckoutSolution {
     }
 
     private int calculatePriceA(int noOfA){
-        return 130 * (noOfA / 3) + 50 * (noOfA % 3);
+        int firstPrice =  130 * (noOfA / 3) + 50 * (noOfA % 3);
+        int secondPrice = 200 * (noOfA / 5) + 50 * (noOfA % 5);
+        return Math.max(firstPrice, secondPrice);
     }
 
     private int calculatePriceB(int noOfB) {
@@ -38,6 +40,7 @@ public class CheckoutSolution {
 
 
 }
+
 
 
 
