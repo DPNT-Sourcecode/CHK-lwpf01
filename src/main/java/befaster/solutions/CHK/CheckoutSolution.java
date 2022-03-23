@@ -2,6 +2,8 @@ package befaster.solutions.CHK;
 
 import befaster.runner.SolutionNotImplementedException;
 
+import java.util.ArrayList;
+
 public class CheckoutSolution {
     public Integer checkout(String skus) {
         if(skus != null) {
@@ -183,10 +185,27 @@ public class CheckoutSolution {
 
     // buy any 3 of (Z,T,Y,S,X) for 45
     private int groupPrice(int noOfZ, int noOfT, int noOfY, int noOfS, int noOfX){
-        
+        ArrayList<String> orderedArrayOfProducts = ArrayList<String>.;
+        while(noOfZ != 0) {
+            orderedArrayOfProducts.add("Z");
+            noOfZ--;
+        }
+        while(noOfZ != 0) {
+            orderedArrayOfProducts.add("Z");
+            noOfZ--;
+        }
+        while(noOfZ != 0) {
+            orderedArrayOfProducts.add("Z");
+            noOfZ--;
+        }
+        while(noOfZ != 0) {
+            orderedArrayOfProducts.add("Z");
+            noOfZ--;
+        }
     return totalPrice;
     }
 }
+
 
 
 
