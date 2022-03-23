@@ -183,91 +183,10 @@ public class CheckoutSolution {
 
     // buy any 3 of (Z,T,Y,S,X) for 45
     private int groupPrice(int noOfZ, int noOfT, int noOfY, int noOfS, int noOfX){
-        int total = 0;
-        int totalPrice = 0;
-        if(noOfZ / 3 > 0) {
-            totalPrice = totalPrice + 45 * (noOfZ / 3);
-            noOfZ = noOfZ - 3 * (noOfZ / 3);
-        }
-        if(noOfT/ 3 > 0) {
-            totalPrice = totalPrice + 45 * (noOfT / 3);
-            noOfT = noOfT - 3 * (noOfT / 3);
-        }
-        if(noOfY / 3 > 0) {
-            totalPrice = totalPrice + 45 * (noOfY / 3);
-            noOfY = noOfY - 3 * (noOfY / 3);
-        }
-        if(noOfS / 3 > 0) {
-            totalPrice = totalPrice + 45 * (noOfS / 3);
-            noOfS = noOfS - 3 * (noOfS / 3);
-        }
-        if(noOfX / 3 > 0) {
-            totalPrice = totalPrice + 45 * (noOfX / 3);
-            noOfX = noOfX - 3 * (noOfX / 3);
-        }
-
-        total = noOfZ + noOfT + noOfY + noOfS + noOfX;
-        if(total / 3 > 0) {
-            totalPrice = totalPrice + 45 * (total / 3);
-            total = total - 3 * (total / 3);
-        }
-        if(total == 0)
-            return totalPrice;
-
-        // total == 2
-        // X
-        if(noOfX >= total)
-            totalPrice = totalPrice + total * 17;
-        else {
-            totalPrice = totalPrice + noOfX * 17;
-            total = total - noOfX;
-        }
-
-        // Y
-        if(total == 0)
-            return totalPrice;
-
-        if(noOfY >= total)
-            totalPrice = totalPrice + total * 20;
-        else {
-            totalPrice = totalPrice + noOfY * 20;
-            total = total - noOfY;
-        }
-
-        if(total == 0)
-            return totalPrice;
-
-
-        // T
-        if(noOfT >= total)
-            totalPrice = totalPrice + total * 20;
-        else {
-            totalPrice = totalPrice + noOfT * 20;
-            total = total - noOfT;
-        }
-
-        if(total == 0)
-            return totalPrice;
-
-        // S
-        if(noOfS >= total)
-            totalPrice = totalPrice + total * 20;
-        else {
-            totalPrice = totalPrice + noOfS * 20;
-            total = total - noOfS;
-        }
-        if(total == 0)
-            return totalPrice;
-
-        // Z
-        if(noOfZ >= total)
-            totalPrice = totalPrice + total * 21;
-        else {
-            totalPrice = totalPrice + noOfZ * 21;
-            total = total - noOfZ;
-        }
+        
     return totalPrice;
     }
 }
+
 
 
