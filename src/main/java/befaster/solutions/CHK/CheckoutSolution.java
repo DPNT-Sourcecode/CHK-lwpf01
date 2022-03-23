@@ -214,6 +214,10 @@ public class CheckoutSolution {
         while(orderedArrayOfProducts.size() > 3)
         {
             totalPrice = totalPrice + 45;
+            orderedArrayOfProducts
+            orderedArrayOfProducts.remove(0);
+            orderedArrayOfProducts.remove(1);
+            orderedArrayOfProducts.remove(2);
         }
 
 
@@ -221,3 +225,4 @@ public class CheckoutSolution {
     return totalPrice;
     }
 }
+
