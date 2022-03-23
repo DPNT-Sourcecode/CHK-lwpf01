@@ -240,10 +240,11 @@ public class CheckoutSolution {
                 totalPrice = totalPrice + 17;
         }
 
+        if(orderedArrayOfProducts.size() > 2) {
+            if (orderedArrayOfProducts.get(2).equals("X"))
+                totalPrice = totalPrice + 5;
+        }
+
     return totalPrice;
     }
 }
-
-
-
-
