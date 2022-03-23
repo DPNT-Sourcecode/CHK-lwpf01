@@ -209,7 +209,7 @@ public class CheckoutSolution {
             noOfX--;
         }
 
-        while(orderedArrayOfProducts.size() > 3)
+        while(orderedArrayOfProducts.size() >= 3)
         {
             totalPrice = totalPrice + 45;
             orderedArrayOfProducts = orderedArrayOfProducts.subList(3, orderedArrayOfProducts.size());
@@ -243,6 +243,7 @@ public class CheckoutSolution {
     return totalPrice;
     }
 }
+
 
 
 
