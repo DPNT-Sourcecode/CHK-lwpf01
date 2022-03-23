@@ -207,22 +207,40 @@ public class CheckoutSolution {
             orderedArrayOfProducts.add("X");
             noOfX--;
         }
-//        for(int i = 0; i < orderedArrayOfProducts.size(); i = i + 3){
-//
-//        }
 
         while(orderedArrayOfProducts.size() > 3)
         {
             totalPrice = totalPrice + 45;
-            orderedArrayOfProducts
-            orderedArrayOfProducts.remove(0);
-            orderedArrayOfProducts.remove(1);
-            orderedArrayOfProducts.remove(2);
+            orderedArrayOfProducts = (ArrayList<String>) orderedArrayOfProducts.subList(3, orderedArrayOfProducts.size());
+        }
+        if(orderedArrayOfProducts.size() > 0) {
+            if (orderedArrayOfProducts.get(0).equals("Z"))
+                totalPrice = totalPrice + 21;
+            else if (orderedArrayOfProducts.get(0).equals("T"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(0).equals("Y"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(0).equals("S"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(0).equals("X"))
+                totalPrice = totalPrice + 17;
         }
 
-
+        if(orderedArrayOfProducts.size() > 1) {
+            if (orderedArrayOfProducts.get(1).equals("Z"))
+                totalPrice = totalPrice + 21;
+            else if (orderedArrayOfProducts.get(1).equals("T"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(1).equals("Y"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(1).equals("S"))
+                totalPrice = totalPrice + 20;
+            else if (orderedArrayOfProducts.get(1).equals("X"))
+                totalPrice = totalPrice + 17;
+        }
 
     return totalPrice;
     }
 }
+
 
