@@ -142,8 +142,8 @@ public class CheckoutSolution {
                 + calculatePricePromotionMultipleProduct(noOfP, 50, 200, 5)
                 + calculatePricePromotionMultipleProduct(noOfQ, 30, 80, 3)
                 + 50 * (noOfR)
-
-                + priceOfV;
+                + priceOfV
+                + groupPrice(noOfZ, noOfT, noOfY, noOfS, noOfX);
 
         }
     return -1;
@@ -269,4 +269,5 @@ public class CheckoutSolution {
     return totalPrice;
     }
 }
+
 
