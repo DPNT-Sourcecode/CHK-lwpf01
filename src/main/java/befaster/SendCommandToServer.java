@@ -71,9 +71,8 @@ public class SendCommandToServer {
                 .withConfig(getConfig())
                 .withActionProvider(new UserInputAction(args))
                 .start();
-        CheckoutSolution checkoutSolution = null;
-        checkoutSolution.checkout("AAAAA");
 
     }
 
 }
+

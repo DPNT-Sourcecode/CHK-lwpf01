@@ -125,22 +125,24 @@ public class CheckoutSolution {
             noOfV = noOfV - priceOfV / 43;
             priceOfV = priceOfV + calculatePriceHUnderThreeProducts(noOfV);
 
+            // buy any 3 of (Z,T,Y,S,X) for 45
+
 
             return priceOfA
                 + calculatePricePromotionMultipleProduct(noOfB, 30, 45, 2)
-                + 20 * (noOfC + noOfG + noOfT + noOfW)
+                + 20 * (noOfC + noOfG + noOfW)
                 + 15 * (noOfD + noOfM)
                 + 40 * (noOfE + noOfN + noOfU)
-                + 10 * (noOfF + noOfO + noOfY)
+                + 10 * (noOfF + noOfO)
                 + priceOfH
                 + 35 * noOfI
                 + 60 * noOfJ
-                + calculatePricePromotionMultipleProduct(noOfK, 80, 150, 2)
-                + 90 * (noOfL + noOfX)
+                + calculatePricePromotionMultipleProduct(noOfK, 70, 120, 2)
+                + 90 * (noOfL)
                 + calculatePricePromotionMultipleProduct(noOfP, 50, 200, 5)
                 + calculatePricePromotionMultipleProduct(noOfQ, 30, 80, 3)
-                + 50 * (noOfR  + noOfZ)
-                + 30 * noOfS
+                + 50 * (noOfR)
+
                 + priceOfV;
 
         }
@@ -178,4 +180,93 @@ public class CheckoutSolution {
         return numberOfFreeDifferentProducts;
 
     }
+
+    // buy any 3 of (Z,T,Y,S,X) for 45
+    private int groupPrice(int noOfZ, int noOfT, int noOfY, int noOfS, int noOfX){
+        int total = 0;
+        int totalPrice = 0;
+        if(noOfZ / 3 > 0) {
+            totalPrice = totalPrice + 45 * (noOfZ / 3);
+            noOfZ = noOfZ - 3 * (noOfZ / 3);
+        }
+        if(noOfT/ 3 > 0) {
+            totalPrice = totalPrice + 45 * (noOfT / 3);
+            noOfT = noOfT - 3 * (noOfT / 3);
+        }
+        if(noOfY / 3 > 0) {
+            totalPrice = totalPrice + 45 * (noOfY / 3);
+            noOfY = noOfY - 3 * (noOfY / 3);
+        }
+        if(noOfS / 3 > 0) {
+            totalPrice = totalPrice + 45 * (noOfS / 3);
+            noOfS = noOfS - 3 * (noOfS / 3);
+        }
+        if(noOfX / 3 > 0) {
+            totalPrice = totalPrice + 45 * (noOfX / 3);
+            noOfX = noOfX - 3 * (noOfX / 3);
+        }
+
+        total = noOfZ + noOfT + noOfY + noOfS + noOfX;
+        if(total / 3 > 0) {
+            totalPrice = totalPrice + 45 * (total / 3);
+            total = total - 3 * (total / 3);
+        }
+        if(total == 0)
+            return totalPrice;
+
+        // total == 2
+        // X
+        if(noOfX >= total)
+            totalPrice = totalPrice + total * 17;
+        else {
+            totalPrice = totalPrice + noOfX * 17;
+            total = total - noOfX;
+        }
+
+        // Y
+        if(total == 0)
+            return totalPrice;
+
+        if(noOfY >= total)
+            totalPrice = totalPrice + total * 20;
+        else {
+            totalPrice = totalPrice + noOfY * 20;
+            total = total - noOfY;
+        }
+
+        if(total == 0)
+            return totalPrice;
+
+
+        // T
+        if(noOfT >= total)
+            totalPrice = totalPrice + total * 20;
+        else {
+            totalPrice = totalPrice + noOfT * 20;
+            total = total - noOfT;
+        }
+
+        if(total == 0)
+            return totalPrice;
+
+        // S
+        if(noOfS >= total)
+            totalPrice = totalPrice + total * 20;
+        else {
+            totalPrice = totalPrice + noOfS * 20;
+            total = total - noOfS;
+        }
+        if(total == 0)
+            return totalPrice;
+
+        // Z
+        if(noOfZ >= total)
+            totalPrice = totalPrice + total * 21;
+        else {
+            totalPrice = totalPrice + noOfZ * 21;
+            total = total - noOfZ;
+        }
+    return totalPrice;
+    }
 }
+
