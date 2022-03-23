@@ -185,27 +185,39 @@ public class CheckoutSolution {
 
     // buy any 3 of (Z,T,Y,S,X) for 45
     private int groupPrice(int noOfZ, int noOfT, int noOfY, int noOfS, int noOfX){
-        ArrayList<String> orderedArrayOfProducts = ArrayList<String>.;
+        ArrayList<String> orderedArrayOfProducts = new ArrayList<>();
+        int totalPrice = 0;
         while(noOfZ != 0) {
             orderedArrayOfProducts.add("Z");
             noOfZ--;
         }
-        while(noOfZ != 0) {
-            orderedArrayOfProducts.add("Z");
-            noOfZ--;
+        while(noOfT != 0) {
+            orderedArrayOfProducts.add("T");
+            noOfT--;
         }
-        while(noOfZ != 0) {
-            orderedArrayOfProducts.add("Z");
-            noOfZ--;
+        while(noOfY != 0) {
+            orderedArrayOfProducts.add("Y");
+            noOfY--;
         }
-        while(noOfZ != 0) {
-            orderedArrayOfProducts.add("Z");
-            noOfZ--;
+        while(noOfS != 0) {
+            orderedArrayOfProducts.add("S");
+            noOfS--;
         }
+        while(noOfX != 0) {
+            orderedArrayOfProducts.add("X");
+            noOfX--;
+        }
+//        for(int i = 0; i < orderedArrayOfProducts.size(); i = i + 3){
+//
+//        }
+
+        while(orderedArrayOfProducts.size() > 3)
+        {
+            totalPrice = totalPrice + 45;
+        }
+
+
+
     return totalPrice;
     }
 }
-
-
-
-
